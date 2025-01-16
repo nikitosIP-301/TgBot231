@@ -227,7 +227,7 @@ class Program
         Random rnd = new Random();
         int cou = rnd.Next(1, 17);
 
-        List<string> Listcommsands= new List<string> { "/anecdot", "/help" , "/donate", "/bestofthebest"};
+        List<string> Listcommsands= new List<string> { "/anecdot", "/help" , "/donate"};
 
         if (update.Type == UpdateType.Message)
         {
@@ -270,14 +270,7 @@ class Program
                        cancellationToken: cancellationToken);
                 }
 
-                else if(text == "/bestofthebest")
-                {
-                    await botClient.SendTextMessageAsync(
-                      chatId: message.Chat.Id,
-                      text: "Идёт Волк по лесу, видит — Заяц без ушей. Волк:\r\n— Ты это чего, где уши потерял?\r\n— Да вот армию закосил — уши обрезал — мне и сказали мол \"Негоден\".\r\n— Блин, так мне тоже повестка пришла!\r\n— Ну, серый, уши то у тебя маленькие, придётся хвост обрезать.\r\nОбрезали хвост волку, его тоже отпустили на свободу. Сидят вдвоём празднуют отмаз от армии. Идёт Медведь:\r\n— Чего это вы? Один без ушей, другой без хвоста?\r\n— Так мы от армии закосили!\r\n— Эх, блин, так мне тоже надо!\r\nПосмотрели звери на медведя и говорят:\r\n— Уши маленькие, хвост тоже, придётся яйца резать!\r\n— Да вы что, это же самое дорогое что у меня есть!!!!\r\n— Ну, тогда, Миша, шуруй в армию! Говорит волк\r\nДолго ломался медведь, по итогу решил:\r\n— Ладно, режьте!\r\nОтрезали Мишке его достоинство, и пошёл он на медкомиссию. \r\nТри дня его не было видно, и пошли заяц с волком искать медведя, проходят мимо военкомата и видят медведь на дереве повесился, а в руках у него бумажка: \r\nЗаяц взял её и читает: «Не годен. Косолапие».",
-                      cancellationToken: cancellationToken);
-                }
-
+               
                 else if (text == "/help")
                 {
                     await botClient.SendTextMessageAsync(
